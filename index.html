@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Manipulating Arrays</title>
+</head>
+
+<body>
+    <h1>Manipulating Arrays</h1>
+
+    <script>
+        // 👉 1 for loop from beginning to end and vice-versa
+        const letters = ['a', 'b', 'c', 'd', 'e']; // Define the array
+        for (let idx = 0; idx < letters.length; idx++) {
+            let char = letters[idx];
+            console.log(char);
+        }
+        for (let index = letters.length - 1; index >= 0; index--) {
+            let char = letters[index];
+            console.log(char);
+        }
+
+        // 👉 2 multiply every third number, starting with the second element
+        const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        let multiplied = 1;
+        for (let i = 1; i < nums.length; i += 3) {
+            multiplied *= nums[i];
+        }
+        console.log(multiplied);
+
+        // 👉 3 while loop from beginning to end and vice-versa
+        const fruits = ['apple', 'orange', 'tomato', 'banana', 'pineapple'];
+        let index = 0;
+        while (index < fruits.length) {
+            let fruit = fruits[index];
+            console.log(fruit);
+            if (fruit === 'tomato') {
+                console.log('Wait, tomato is not a fruit!');
+                break;
+            }
+            index++;
+        }
+
+        // 👉 4 nested loops to find occurrences of 'a' in words
+        let lettersA = [];
+        let words = ['apple', 'orange', 'tomato', 'banana', 'pineapple'];
+        for (let i = 0; i < words.length; i++) {
+            let word = words[i];
+            for (let j = 0; j < word.length; j++) {
+                let char = word[j];
+                if (char === 'a') {
+                    lettersA.push(char);
+                }
+            }
+        }
+        console.log(lettersA);
+
+        // 5 👉 popping
+        let cards = ['aceSpades', '5Clubs', 'queenDiamonds', 'twoHearts'];
+        function pickCard() {
+            if (!cards.length) {
+                console.log('No more cards');
+            } else {
+                let picked = cards.pop();
+                console.log(`You picked ${picked}`);
+                console.log(cards);
+            }
+        }
+        pickCard();
+
+        // 6 👉 slicing
+        const letters2 = ['a', 'b', 'c', 'd', 'e'];
+        const sliced = letters2.slice(1, 4);
+        console.log(sliced);
+    </script>
+</body>
+
+</html>
